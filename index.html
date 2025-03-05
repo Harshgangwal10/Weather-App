@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="style.css" >
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400&display=swap">
+</head>
+
+<body >
+  <main class="container">
+    <header class="input-container">
+      <input class="search-city" placeholder="Serach City">
+      <button class="search-btn">
+        <span class="material-symbols-outlined">
+          search
+          </span>
+      </button>
+    </header>
+ 
+
+  <section class="weather-details" style="display: none">
+   <div class="location-date-container">
+    <div class="location">
+      <span class="material-symbols-outlined">
+        location_on
+        </span>
+        <h3 class="country-name">India</h3>
+    </div>
+    <h5 class="current-date">Wed ,07 Jan</h5>
+   </div>
+
+   <div class="weather-deatils-container">
+    <div class="weatherImg">
+      <canvas id="sunnyCanvas" class="weatherCanvas" width="100" height="80" style="display: none;"></canvas>
+      <canvas id="rainCanvas" class="weatherCanvas" width="100" height="80" style="display: none;"></canvas>
+      <canvas id="snowCanvas" class="weatherCanvas" width="100" height="80" style="display: none;"></canvas>
+      <canvas id="windCanvas" class="weatherCanvas" width="100" height="80" style="display: none;"></canvas>
+  </div>
+    <div class="weather-deatil">
+      <h1 class="temp-text">29°C</h1>
+      <h3 class="condition-text">
+        Clouds
+      </h3>
+    </div>
+   </div>
+   <div class="weather-condition-container">
+    <div class="condition-item">
+      <span class="material-symbols-outlined">
+        water_drop
+        </span>
+        <div class="condition-detail">
+          <h5 class="frequently-use-text">Humidity</h5>
+          <h5 class="humidity-value">55%</h5>
+        </div>
+    </div> 
+
+    <div class="condition-item">
+      <span class="material-symbols-outlined">
+        air
+        </span>
+        <div class="condition-detail">
+          <h5 class="frequently-use-text">wind speed</h5>
+          <h5 class="wind-speed">2 M/s</h5>
+        </div>
+    </div> 
+  </div>
+  
+  </section>
+  <section class="serach-area section-message" >
+    <div>
+      <h1>Search City</h1>
+      <h4 class="search-text">
+        Find out the weather conditions of the city
+      </h4>
+    </div>
+  </section>
+  <section class="not-found section-message" style="display: none">
+    <div>
+      <h1>Search City</h1>
+      <h4 class="notFound">
+        Not found
+      </h4>
+    </div>
+  </section>
+</main>
+</body>
+
+<script src="script.js"></script>
+</html>
