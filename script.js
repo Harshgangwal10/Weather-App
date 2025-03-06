@@ -14,7 +14,7 @@ const windvalue =document.querySelector('.wind-speed')
 const weatherImg =document.querySelector('.img')
 
 
-const apiKey ="ad10e8c13d5c4c9b1080673a68a3aebf";
+const apiKey ="Api_key";
 
 
 serachBtn.addEventListener('click' ,() =>{
