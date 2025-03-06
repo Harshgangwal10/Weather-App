@@ -14,7 +14,7 @@ const windvalue =document.querySelector('.wind-speed')
 const weatherImg =document.querySelector('.img')
 
 
-const apiKey ="Api_key";
+const apiKey ="ad10e8c13d5c4c9b1080673a68a3aebf";
 
 
 serachBtn.addEventListener('click' ,() =>{
@@ -66,6 +66,7 @@ async function updateWeatherInfo(city){
   
 currentDate.textContent =getCurrentDate()
  showDispalySection(weatherInfo)
+ console.log(id)
  showWeatherAnimation(id);
 }
 
@@ -88,29 +89,33 @@ function showDispalySection(section){
 
 function showWeatherAnimation(id) {
   const canvases = document.querySelectorAll('.weatherCanvas');
+  
   if (!canvases) {
     console.error("Canvas element not found!");
     return;
 }
   canvases.forEach(canvas => canvas.style.display = 'none');
 
-  if (id >= 200 && id <= 232) {
+  if (id >= 200 && id <= 531) {
       drawRain("rainCanvas");
       document.getElementById("rainCanvas").style.display = "block";
-  } else if (id >= 300 && id <= 531) {
-      drawRain("rainCanvas");
-      document.getElementById("rainCanvas").style.display = "block";
-  } else if (id >= 600 && id <= 622) {
+  } 
+   else if (id >= 600 && id <= 622) {
       drawSnow("snowCanvas");
       document.getElementById("snowCanvas").style.display = "block";
-  } else if (id >= 701 && id <= 781) {
+  } 
+  else if (id >= 701 && id <= 781) {
       drawWindy("windCanvas");
       document.getElementById("windCanvas").style.display = "block";
-  } else if (id >= 800) {
+  } 
+  else if (id === 800) {
       drawSunny("sunnyCanvas");
       document.getElementById("sunnyCanvas").style.display = "block";
   } 
-
+  else if (id > 800) {
+    drawCloudSun("drawCloudsCanvas");
+    document.getElementById("drawCloudsCanvas").style.display = "block";
+} 
 }
 
 
@@ -133,7 +138,7 @@ function drawSunny(sunnyCanvas) {
       ctx.arc(sunX, sunY, sunRadius, 0, Math.PI * 2);
       ctx.fillStyle = "yellow";
       ctx.fill();
-      ctx.closePath();
+    
 
       
       for (let i = 0; i < 12; i++) { 
@@ -149,7 +154,7 @@ function drawSunny(sunnyCanvas) {
           ctx.strokeStyle = "orange";
           ctx.lineWidth = 2;
           ctx.stroke();
-          ctx.closePath();
+         
       }
 
       angle += 0.01; 
@@ -159,8 +164,8 @@ function drawSunny(sunnyCanvas) {
   animateSun();
 }
 
-function drawCloudSun(canvasId) {
-  const canvas = document.getElementById(canvasId);
+function drawCloudSun(drawCloudsCanvas) {
+  const canvas = document.getElementById(drawCloudsCanvas);
   const ctx = canvas.getContext("2d");
   let sunX = 40;
 
@@ -172,7 +177,7 @@ function drawCloudSun(canvasId) {
       ctx.arc(sunX, 50, 30, 0, Math.PI * 2);
       ctx.fillStyle = "yellow";
       ctx.fill();
-      ctx.closePath();
+    
 
       
       ctx.beginPath();
@@ -181,7 +186,7 @@ function drawCloudSun(canvasId) {
       ctx.arc(110, 60, 25, 0, Math.PI * 2);
       ctx.fillStyle = "lightgray";
       ctx.fill();
-      ctx.closePath();
+   
 
       sunX += 0.5;
       if (sunX > 100) sunX = 40; 
@@ -192,8 +197,8 @@ function drawCloudSun(canvasId) {
   animate();
 }
 
-function drawRain(canvasId) {
-  const canvas = document.getElementById(canvasId);
+function drawRain(rainCanvas) {
+  const canvas = document.getElementById(rainCanvas);
   const ctx = canvas.getContext("2d");
   let raindrops = [];
 
@@ -222,8 +227,8 @@ function drawRain(canvasId) {
   animateRain();
 }
 
-function drawWindy(canvasId) {
-  const canvas = document.getElementById(canvasId);
+function drawWindy(windCanvas) {
+  const canvas = document.getElementById(windCanvas);
   const ctx = canvas.getContext("2d");
   let cloudX = 0;
 
@@ -248,8 +253,8 @@ function drawWindy(canvasId) {
   animateWind();
 }
 
-function drawSnow(canvasId) {
-  const canvas = document.getElementById(canvasId);
+function drawSnow(snowCanvas) {
+  const canvas = document.getElementById(snowCanvas);
   const ctx = canvas.getContext("2d");
   let snowflakes = [];
 
