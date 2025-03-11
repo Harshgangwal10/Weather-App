@@ -25,15 +25,3 @@ JavaScript (for data fetching and dynamic rendering)
 
 Weather API (for real-time weather updates)
 
-<h1>How to Run</h1>
-
-1> Clone the repository
-
-2> Get the api key from openweather
-
-3> Set this api key in Script.js file 
-
-4>Open index.html in a browser.
-
-5>Enter a city name to view real-time weather data with animated effects.
-
